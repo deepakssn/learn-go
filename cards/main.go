@@ -8,6 +8,7 @@ func main() {
 	// remaining.print()
 	cards.writeToFile("mycards")
 	newCards := newDeckFromFile("mycards")
+	newCards.shuffle()
 	newCards.print()
 
 }
