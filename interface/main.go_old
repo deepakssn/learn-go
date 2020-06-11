@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+type enBot struct{}
+type spBot struct{}
+
+type bot interface {
+	greet() string
+}
+
+func main() {
+	en := enBot{}
+	sp := spBot{}
+
+	printGreet(en)
+	printGreet(sp)
+
+}
+
+func printGreet(b bot) {
+	fmt.Println(b.greet())
+}
+
+func (enBot) greet() (s string) {
+	s = "test"
+	return "_"
+}
+
+func (spBot) greet() string {
+	return "Hola"
+}
